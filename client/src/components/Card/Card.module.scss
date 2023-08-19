@@ -1,0 +1,22 @@
+.card {
+  text-align-last: left;
+  
+  &__image {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  &__title {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.35;
+    font-weight: 600;
+  }
+
+  &__amount {
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: 300;
+  }
+}

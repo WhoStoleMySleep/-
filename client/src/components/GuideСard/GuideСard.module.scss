@@ -1,0 +1,41 @@
+.guide-card {
+  max-width: 360px;
+  height: 609px;
+  border: 1px solid #E0E0E0;
+  border-radius: 10px;
+  text-align: center;
+  padding: 0 31px;
+
+  &__number {
+    width: 62px;
+    height: 62px;
+    border-radius: 100%;
+    font-size: 20px;
+    border: 1px solid #222222;
+    margin: -31px auto 41px auto;
+    line-height: 62px;
+    background-color: #fff;
+    font-weight: 700;
+  }
+
+  &__title {
+    font-size: 20px;
+    margin-bottom: 24px;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  &__description {
+    font-size: 18px;
+    line-height: 1.55;
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+
+  &__image {
+    max-width: 300px;
+    width: 100%;
+    margin: auto auto 0;
+    padding-top: 20px;
+  }
+}

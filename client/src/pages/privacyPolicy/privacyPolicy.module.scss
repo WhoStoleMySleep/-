@@ -1,0 +1,42 @@
+.main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-bottom: 64px;
+  padding: 0 2em 64px 3em;
+
+  * {
+    line-height: 1.55;
+  }
+
+  p, li {
+    font-weight: 300;
+  }
+
+  &>ol>li {
+    font-weight: 600;
+  }
+  
+  p, li {
+    font-size: 20px;
+  }
+
+  &__title {
+    font-size: 30px;
+    padding-top: 90px;
+    padding-bottom: 30px;
+    line-height: 1.23;
+  }
+
+  ol>li {
+    list-style-type: decimal;
+  }
+
+  ul>li {
+    list-style-type: disc;
+    margin-left: 1em;
+  }
+
+  li>ol>li {
+    margin-left: 1em;
+  } 
+}

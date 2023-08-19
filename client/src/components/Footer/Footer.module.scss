@@ -1,0 +1,73 @@
+.footer {
+  background-color: #F2F7F4;
+
+  &__wrapper {
+    max-width: 1211px;
+    padding: 60px 25px 0 25px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+    position: relative;
+  }
+  
+  &__site-wrapper {
+    margin-top: 65px;
+  }
+  
+  &__date,
+  &__privacy-policy-link {
+    font-size: 10px;
+  }
+
+  &__privacy-policy-link {
+    color: #D68682;
+    text-decoration: underline;
+  }
+
+  &__list {
+    display: flex;
+    margin-bottom: 30px;
+    gap: 110px;
+  }
+
+  &__payment-method {
+    padding: 11px 25px 54.4px 25px;
+  }
+
+  &__payment-method-container {
+    display: flex;
+    max-width: 1160px;
+    height: 40.6px;
+    align-items: center;
+    margin: 0 auto;
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 675px) {
+  .footer {
+    &__wrapper {
+      justify-content: center;
+      gap: 40px;
+    }
+    
+    &__list {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .footer {
+    &__wrapper {
+      flex-direction: column;
+      width: fit-content;
+    }
+
+    &__payment-method-container {
+      flex-direction: column;
+    }
+  }
+}

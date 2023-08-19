@@ -1,0 +1,55 @@
+.send-contact {
+  padding: 97px 25px 0 25px;
+  text-align: center;
+  background-color: #A7C8B7;
+  
+  &__title {
+    font-size: 38px;
+    color: #fff;
+    font-weight: 600;
+    line-height: 1.23;
+  }
+
+  &__input-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 60px 0 90px 0;
+  }
+
+  &__input {
+    max-width: 510px;
+    width: 100%;
+    height: 60px;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 0 20px;
+    line-height: 1.33;
+
+    &::placeholder {
+      font-family: Roboto;
+      letter-spacing: 1.5px;
+    }
+  }
+
+  &__button {
+    width: 230px;
+    height: 60px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .send-contact {
+    &__input-container {
+      display: block;
+    }
+
+    &__button {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.cake {
+  &__logo {
+    width: 160px;
+    height: 150px;
+  }
+  
+  &__discription {
+    font-size: 20px;
+    font-weight: 600; 
+    margin: 6px 0;
+  }
+}

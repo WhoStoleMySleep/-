@@ -1,0 +1,116 @@
+.product {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #fff;
+  z-index: 100000;
+  opacity: 0.6;
+  animation: fadeInUp 0.15s ease-in-out forwards;
+
+  * {
+    font-family: 'FuturaPT',Arial,sans-serif;
+  }
+
+  &__header {
+    display: flex;
+    width: 100%;
+    height: 63px;
+    padding: 0 20px;
+    justify-content: space-between;
+  }
+
+  &__back-text {
+    &::before {
+      content: "←\a0";
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    max-width: 1160px;
+    margin: 80px auto 0 auto;
+    gap: 40px;
+  }
+
+  &__image {
+    width: 560px;
+    height: 420px;
+  }
+
+  &__title {
+    font-size: 24px;
+  }
+
+  &__article {
+    font-size: 12px;
+    margin-top: 3px;
+    font-weight: 300;
+  }
+
+  &__amount {
+    font-size: 19px;
+    margin-top: 20px;
+    font-weight: 400;
+  }
+
+  &__buy {
+    width: 123px;
+    height: 45px;
+    background-color: #D68682;
+    color: #fff;
+    border-radius: 40px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+
+  &__description {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+
+  &__mass {
+    font-size: 16px;
+    margin-top: 18px;
+    font-weight: 700;
+  }
+
+  &__content {
+    font-size: 16px;
+    line-height: 1.55;
+    margin-top: 6px;
+  }
+
+  &__composition {
+    font-size: 14px;
+  }
+
+  &__composition-col {
+    display: block;
+    margin-top: 18px;
+
+    &:nth-child(1) {
+      font-weight: 700;
+    }
+
+    &:nth-child(2) {
+      margin-top: 6px;
+      font-weight: 400;
+      color: #000;
+    }
+  }
+
+  &__additionaly {
+    font-size: 14px;
+    margin-top: 18px;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
+}

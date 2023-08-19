@@ -1,0 +1,93 @@
+.main {
+  &__head {
+    width: 100%;
+    height: 250px;
+    background-image: url('../../assets/image/delivery-and-payment-bg.jpg');
+    background-repeat: no-repeat;
+    margin-bottom: 135px;
+    background-size: cover;
+    background-position: center center;
+    margin-top: -15px;
+  }
+  
+  &__row {
+    display: flex;
+    column-gap: 220px;
+    row-gap: 40px;
+    justify-content: center;
+    margin-bottom: 90px;
+    flex-wrap: wrap;
+    padding: 0 25px;
+  }
+  
+  &__title {
+    font-size: 50px;
+    margin-bottom: 25px;
+  }
+
+  &__additionaly {
+    font-size: 16px;
+    color: #666;
+  }
+
+  &__text {
+    font-size: 24px;
+    max-width: 550px;
+    font-weight: 300;
+    line-height: 37.2px;
+  }
+
+  &__timeline {
+    padding-left: 1em;
+    line-height: 37.2px;
+  }
+  
+  &__timeline-element {
+    list-style-type: disc;
+  }
+
+  &__timeline-element p {
+    font-size: 24px;
+    font-weight: 300;
+  }
+
+  &__content-row {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 25px;
+
+    &:not(:last-child) {
+      margin-bottom: 120px;
+    }
+
+    &:last-child {
+      flex-direction: row-reverse;
+      margin-bottom: 165px;
+    }
+  }
+
+  &__content-title {
+    font-size: 26px;
+  }
+
+  &__content-text {
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+  &__content-timeline {
+    padding-left: 1em;
+    line-height: 1.55;
+  }
+  
+  &__content-timeline-element {
+    list-style-type: disc;
+  }
+
+  &__content-timeline-element p {
+    font-size: 18px;
+    font-weight: 300;
+  }
+}

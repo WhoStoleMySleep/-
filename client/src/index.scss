@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  font-family: FuturaPT;
+  font-weight: normal;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  margin-top: 60px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+  background-color: #fff;
+}

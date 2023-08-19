@@ -1,0 +1,31 @@
+.main {
+  text-align: center;
+  padding-bottom: 60px;
+  
+  &__head {
+    max-width: 1680px;
+    height: 420px;
+    background-image: url('../../assets/image/undefined-page.png');
+    background-position: 50% 0;
+    margin-top: -15px;
+    margin-bottom: 50px;
+  }
+
+  &__title {
+    font-size: 50px;
+    max-width: 650px;
+    margin: 0 auto 40px auto;
+  }
+
+  &__additional {
+    font-size: 20px;
+  }
+
+  &__link {
+    color: #D68682;
+    border-bottom: 1px solid #D68682;
+    font-size: 26px;
+    line-height: 1.45;
+    font-weight: 300;
+  }
+}

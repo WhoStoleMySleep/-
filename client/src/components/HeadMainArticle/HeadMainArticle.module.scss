@@ -1,0 +1,136 @@
+.head-main-article {
+  display: block;
+  background-image: url('../../assets/image/index-bg.png');
+  background-position: center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: -15px;
+  position: relative;
+  
+  &__wrapper {
+    display: flex;
+    max-width: 1162px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+  }
+
+  &__title {
+    font-size: 70px;
+    color: #fff;
+    line-height: 70px;
+    max-width: 500px;
+    font-weight: 700;
+    position: absolute;
+    top: calc(50vh - 275px + 115px);
+    left: calc(50% - 600px + 80px);
+    z-index: 3;
+  }
+
+  &__description {
+    max-width: 490px;
+    font-size: 24px;
+    line-height: 37px;
+    color: #828282;
+    top: calc(50vh - 275px + 349px);
+    left: calc(50% - 600px + 80px);
+    z-index: 3;
+    position: absolute;
+  }
+
+  &__cakes {
+    right: 0; 
+    margin-top: 17px;
+  }
+  
+  &__cake-one {
+    width: 330px;
+    height: 330px;
+    position: absolute;
+    top: calc(50vh - 275px + -25px);
+    left: calc(50% - 600px + 670px);
+  }
+
+  &__cake-two {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: calc(50vh - 275px + 125px);
+    left: calc(50% - 600px + 950px);
+  }
+
+  &__cake-three {
+    width: 330px;
+    height: 330px;
+    position: absolute;
+    top: calc(50vh - 275px + 275px);
+    left: calc(50% - 600px + 650px);
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .head-main-article {
+    &__title,
+    &__description {
+      left: calc(50% - 490px + 80px);
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .head-main-article {
+    background-size: auto 100%;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .head-main-article {
+    &__title,
+    &__description {
+      width: 370px;
+      left: 120px;
+      right: 0;
+    }
+    
+    &__title {
+      font-size: 50px;
+      line-height: 70px;
+      top: 260px;
+    }
+
+    &__description {
+      top: 430px;
+    }
+  }
+}
+
+@media screen and (max-width: 592px) {
+  .head-main-article {
+    &__title,
+    &__description {
+      width: 270px;
+      left: 0;
+      margin: 0 auto;
+    }
+
+    &__title {
+      font-size: 36px;
+      line-height: 56px;
+      top: 260px;
+    }
+
+    &__description {
+      font-size: 16px;
+      line-height: 36px;
+      top: 400px;
+    }
+  }
+}

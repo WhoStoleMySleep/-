@@ -1,0 +1,47 @@
+.create-cake {
+  padding: 238px 0 0 0;
+  
+  &__head {
+    display: block;
+    max-width: 560px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 60px;
+  }
+  
+  &__title {
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    line-height: 1.23;
+  }
+
+  &__description {
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 121px;
+    font-weight: 300;
+  }
+  
+  &__cards {
+    display: flex;
+    margin: 0 auto 105px auto;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+  }
+
+  &__link {
+    display: table;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    background-color: #D68682;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 30px;
+    margin: 0 auto 90px auto;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
