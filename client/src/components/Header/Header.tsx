@@ -44,7 +44,7 @@ function Header() {
               </li>
               <li className={styles["header__link-element"]}>
                 <Link to={'https://t.me/creamroyalbakery'} className={styles["header__link_telegram"]}>
-                  <img src={telegram} alt="" />
+                  <img src={telegram} alt="tg" />
                 </Link>
               </li>
             </ul>
