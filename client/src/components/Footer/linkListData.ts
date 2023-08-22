@@ -45,7 +45,7 @@ const linkListData = [
       },
       {
         title: 'Карта сайта',
-        link: '/'
+        link: '/sitemap'
       },
       {
         title: 'Контакты',

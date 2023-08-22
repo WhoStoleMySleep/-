@@ -1,0 +1,29 @@
+.main {
+  padding: 0 90px 90px 90px;
+
+  &__row {
+    margin-top: 90px;
+  }
+  
+  &__row-title {
+    font-size: 36px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    line-height: 1.23;
+    font-weight: 600;
+  }
+
+  &__link-list-element {
+    border-top: 1px solid #eeeeee;
+    padding: 15px 0;
+    font-weight: 300;
+  }
+  
+  &__link {
+    display: block;
+    color: #ff8562;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 600;
+  }
+}

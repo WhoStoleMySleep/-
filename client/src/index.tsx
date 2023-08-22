@@ -14,6 +14,7 @@ import DeliveryAndPayment from './pages/deliveryAndPayment/deliveryAndPayment';
 import PrivacyPolicy from './pages/privacyPolicy/privacyPolicy';
 import Contacts from './pages/contacts/contacts';
 import UndefinedPage from './pages/undefinedPage/undefinedPage';
+import SiteMap from './pages/siteMap/siteMap';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -30,6 +31,7 @@ root.render(
         <Route path='/delivery-and-payment' element={<DeliveryAndPayment />}></Route>
         <Route path='/privacy-policy' element={<PrivacyPolicy />}></Route>
         <Route path='/contacts' element={<Contacts />}></Route>
+        <Route path='/sitemap' element={<SiteMap />}></Route>
         <Route path='*' element={<UndefinedPage />}></Route>
       </Routes>
       <Footer />
