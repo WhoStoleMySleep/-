@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
 import styles from './siteMap.module.scss';
+import scrollToTop from '../../utils/scrollToTop';
 
 function SiteMap() {
+  scrollToTop();
+  
   return (
     <main className={styles["main"]}>
       <div className={styles["main__row"]}>
