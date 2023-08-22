@@ -1,6 +1,6 @@
-import guideImage1 from '../../assets/image/guideImage1.png'
-import guideImage2 from '../../assets/image/guideImage2.jpg'
-import guideImage3 from '../../assets/image/guideImage3.png'
+import guideImage1 from '../../assets/image/guideImage1.webp'
+import guideImage2 from '../../assets/image/guideImage2.webp'
+import guideImage3 from '../../assets/image/guideImage3.webp'
 
 const cardData = [
   {

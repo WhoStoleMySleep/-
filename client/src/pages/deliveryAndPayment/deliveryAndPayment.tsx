@@ -1,6 +1,7 @@
 import styles from './deliveryAndPayment.module.scss';
-import yurga from '../../assets/image/yurga.png'
-import yurginskyDistrict from '../../assets/image/yurginsky-district.png'
+import yurga from '../../assets/image/yurga.webp'
+import yurginskyDistrict from '../../assets/image/yurginsky-district.webp'
+import scrollToTop from '../../utils/scrollToTop';
 
 function DeliveryAndPayment() {
   return (

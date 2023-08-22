@@ -1,10 +1,10 @@
 import TransparentLink from '../../components/TransparentLink/TransparentLink';
 import { transparentLinkData } from './aboutСonfectioneryData'
 import styles from './aboutСonfectionery.module.scss';
-import people from '../../assets/image/people.png'
-import aboutConfectioneryImage1 from '../../assets/image/about-confectionery-image1.jpg'
-import aboutConfectioneryImage2 from '../../assets/image/about-confectionery-image2.jpg'
-import aboutConfectioneryImage3 from '../../assets/image/about-confectionery-image3.jpg'
+import people from '../../assets/image/people.webp'
+import aboutConfectioneryImage1 from '../../assets/image/about-confectionery-image1.webp'
+import aboutConfectioneryImage2 from '../../assets/image/about-confectionery-image2.webp'
+import aboutConfectioneryImage3 from '../../assets/image/about-confectionery-image3.webp'
 
 function AboutСonfectionery() {
   return (

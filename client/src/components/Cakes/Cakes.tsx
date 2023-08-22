@@ -1,11 +1,11 @@
 import styles from './Cakes.module.scss';
 import Cake from '../Cake/Cake';
-import category1 from '../../assets/image/category1.png'
-import category2 from '../../assets/image/category2.png'
-import category3 from '../../assets/image/category3.png'
-import category4 from '../../assets/image/category4.png'
-import category5 from '../../assets/image/category5.png'
-import category6 from '../../assets/image/category6.png'
+import category1 from '../../assets/image/category1.webp'
+import category2 from '../../assets/image/category2.webp'
+import category3 from '../../assets/image/category3.webp'
+import category4 from '../../assets/image/category4.webp'
+import category5 from '../../assets/image/category5.webp'
+import category6 from '../../assets/image/category6.webp'
 
 function Cakes({titles}: {titles: {title: string, titleStyles: any}}) {
   const { title, titleStyles } = titles

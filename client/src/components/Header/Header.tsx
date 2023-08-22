@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import logo from '../../assets/image/logo.png';
-import telegram from '../../assets/image/telegram.png'
+import logo from '../../assets/image/logo.webp';
+import telegram from '../../assets/image/telegram.webp'
 import styles from './Header.module.scss';
 
 function Header() {

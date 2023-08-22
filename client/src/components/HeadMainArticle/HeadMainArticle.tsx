@@ -1,7 +1,7 @@
 import styles from './HeadMainArticle.module.scss';
-import cake1 from '../../assets/image/cake1.png';
-import cake2 from '../../assets/image/cake2.png';
-import cake3 from '../../assets/image/cake3.png';
+import cake1 from '../../assets/image/cake1.webp';
+import cake2 from '../../assets/image/cake2.webp';
+import cake3 from '../../assets/image/cake3.webp';
 
 function HeadMainArticle() {
   return (

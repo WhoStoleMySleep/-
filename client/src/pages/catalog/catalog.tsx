@@ -1,5 +1,5 @@
 import styles from './catalog.module.scss';
-import catalogLogo from '../../assets/image/catalogLogo.png'
+import catalogLogo from '../../assets/image/catalogLogo.webp'
 import Card from '../../components/Card/Card';
 import Cakes from '../../components/Cakes/Cakes';
 import Product from '../../components/Product/Product';

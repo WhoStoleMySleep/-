@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import styles from './Footer.module.scss';
 import LinkList from '../LinkList/LinkList';
 import linkListData from './linkListData';
-import paymentCards from '../../assets/image/paymentCards.png'
+import paymentCards from '../../assets/image/paymentCards.webp'
 
 function Footer() {
   return (

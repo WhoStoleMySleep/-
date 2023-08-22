@@ -4,27 +4,27 @@ const linkListData = [
     links: [
       {
         title: 'Торт на заказ',
-        link: '/'
+        link: '/catalog'
       },
       {
         title: 'Торт на день рождения',
-        link: '/'
+        link: '/catalog'
       },
       {
         title: 'Классические торты',
-        link: '/'
+        link: '/catalog'
       },
       {
         title: 'Бисквитные торты',
-        link: '/'
+        link: '/catalog'
       },
       {
         title: 'Детские торты',
-        link: '/'
+        link: '/catalog'
       },
       {
         title: 'Украшения для тортов',
-        link: '/'
+        link: '/catalog'
       },
     ]
   },

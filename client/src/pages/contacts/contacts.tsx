@@ -1,6 +1,7 @@
 import styles from './contacts.module.scss';
-import youtube from '../../assets/image/youtube.png'
-import telegram from '../../assets/image/telegram.png'
+import youtube from '../../assets/image/youtube.webp'
+import telegram from '../../assets/image/telegram.webp'
+import scrollToTop from '../../utils/scrollToTop';
 
 function Contacts() {
   return (

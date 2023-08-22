@@ -1,7 +1,7 @@
 import styles from './About.module.scss';
-import aboutImage1 from '../../assets/image/aboutImage1.png'
-import aboutImage2 from '../../assets/image/aboutImage2.png'
-import aboutImage3 from '../../assets/image/aboutImage3.png'
+import aboutImage1 from '../../assets/image/aboutImage1.webp'
+import aboutImage2 from '../../assets/image/aboutImage2.webp'
+import aboutImage3 from '../../assets/image/aboutImage3.webp'
 
 function About() {
   return (

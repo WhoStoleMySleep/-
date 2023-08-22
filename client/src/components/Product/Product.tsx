@@ -1,5 +1,5 @@
 import styles from './Product.module.scss';
-import close from '../../assets/image/close.png'
+import close from '../../assets/image/close.svg'
 
 function Product({productData, handleOpen}: {productData: {image: string, title: string, amount: string, article: string, description: string, mass: string, content: string, composition: string, additionally: string}, handleOpen: any}) {
   const {image, title, amount, article, description, mass, content, composition, additionally} = productData
