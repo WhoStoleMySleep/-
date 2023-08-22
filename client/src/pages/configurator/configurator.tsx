@@ -1,8 +1,11 @@
+import ConfiguratorMenu from '../../components/ConfiguratorMenu/ConfiguratorMenu';
 import CreateCake from '../../components/CreateCake/CreateCake';
 import styles from './configurator.module.scss';
 import scrollToTop from '../../utils/scrollToTop';
 
 function Configurator() {
+  const [open, setOpen] = useState(false);
+
   scrollToTop()
   return (
     <main className={styles["main"]}>
@@ -10,6 +13,9 @@ function Configurator() {
       <h1 className={styles["main__title"]}>
         Торты на заказ в Юрге
       </h1>
+      {open && <ConfiguratorMenu configuratorMenuData={{
+        setOpen: setOpen
+      }} />}
       <CreateCake createCakeData={{
         title: 'Создайте торт своей мечты.',
         description: 'У нас можно заказать авторский торт со своим дизайном и любой начинкой',

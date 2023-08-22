@@ -1,0 +1,122 @@
+.configurator-menu {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  z-index: 40;
+  align-items: center;
+  
+  &__close-button {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    background-image: url('../../assets/image/close.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: invert(1);
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    mix-blend-mode: difference;
+  }
+  
+  &__wrapper {
+    max-width: 860px;
+    width: 100%;
+    height: fit-content;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 3px;
+    overflow: hidden;
+    padding: 45px;
+  }
+
+  &__text {
+    font-size: 20px;
+  }
+
+  &__input-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin: 5px 0 25px 0;
+  }
+
+  &__input {
+    width: 100%;
+    height: 60px;
+    border: 1px solid #B3B3B3;
+    border-radius: 10px;
+    padding: 0 20px;
+    font-size: 16px;
+  }
+
+  &__textarea {
+    width: 100%;
+    height: 400px;
+    border: 1px solid #B3B3B3;
+    border-radius: 10px;
+    margin-top: 5px;
+    padding: 15px;
+    font-size: 16px;
+    resize: none;
+  }
+
+  &__link {
+    font-size: 20px;
+    color: #FF8562;
+  }
+
+  &__controller {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0 0 0;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__prev-step,
+  &__next-step {
+    width: 197px;
+    height: 45px;
+    background-color: #C79393;
+    color: #fff;
+    border-radius: 10px;
+    transition-duration: 200ms;
+    cursor: pointer;
+    user-select: none;
+    
+    &_deactive {
+      pointer-events: none;
+      opacity: 0;
+      cursor: none;
+
+      &:nth-child(1) {
+        transform: translateX(-100px) scale(0);
+      }
+      
+      &:nth-child(3) {
+        transform: translateX(100px) scale(0);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .configurator-menu {
+    
+    
+    &__prev-step,
+    &__next-step {
+      font-size: 12px;
+    }
+    
+    &__wrapper {
+      padding: 20px;
+      margin: 0;
+    }
+  }
+}
