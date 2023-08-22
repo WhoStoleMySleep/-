@@ -5,6 +5,7 @@ import Cakes from '../../components/Cakes/Cakes';
 import Product from '../../components/Product/Product';
 import { useState } from 'react';
 import { cardData } from './catalogData';
+import scrollToTop from '../../utils/scrollToTop';
 
 function Catalog() {
   const windowWidth = document.documentElement.clientWidth
@@ -21,6 +22,8 @@ function Catalog() {
     composition: '',
     additionally: '',
   })
+
+  scrollToTop()
 
   const handleOpen = (item: any) => {
     setIstOpen(item)

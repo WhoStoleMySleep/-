@@ -4,6 +4,8 @@ import telegram from '../../assets/image/telegram.webp'
 import scrollToTop from '../../utils/scrollToTop';
 
 function Contacts() {
+  scrollToTop();
+  
   return (
     <main className={styles["main"]}>
       <h1 className={styles["main__title"]}>Контакты кондитерской Тортули</h1>

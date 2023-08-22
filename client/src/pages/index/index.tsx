@@ -1,10 +1,14 @@
+import { Link } from 'react-router-dom';
 import About from '../../components/About/About';
 import Cakes from '../../components/Cakes/Cakes';
 import CreateCake from '../../components/CreateCake/CreateCake';
 import HeadMainArticle from '../../components/HeadMainArticle/HeadMainArticle';
 import SendContact from '../../components/SendContact/SendContact';
+import scrollToTop from '../../utils/scrollToTop';
 
 function Index() {
+  scrollToTop()
+    
   return (
     <main className="main">
       <HeadMainArticle />

@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
 import styles from './privacyPolicy.module.scss';
+import scrollToTop from '../../utils/scrollToTop';
 
 function PrivacyPolicy() {
+  scrollToTop()
+  
   return (
     <main className={styles["main"]}>
       <h2 className={styles["main__title"]}>

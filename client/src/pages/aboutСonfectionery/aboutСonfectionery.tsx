@@ -5,8 +5,11 @@ import people from '../../assets/image/people.webp'
 import aboutConfectioneryImage1 from '../../assets/image/about-confectionery-image1.webp'
 import aboutConfectioneryImage2 from '../../assets/image/about-confectionery-image2.webp'
 import aboutConfectioneryImage3 from '../../assets/image/about-confectionery-image3.webp'
+import scrollToTop from '../../utils/scrollToTop';
 
 function AboutСonfectionery() {
+  scrollToTop()
+  
   return (
     <main className={styles["main"]}>
       <div className={styles["main__head"]}>

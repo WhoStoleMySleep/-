@@ -4,6 +4,8 @@ import yurginskyDistrict from '../../assets/image/yurginsky-district.webp'
 import scrollToTop from '../../utils/scrollToTop';
 
 function DeliveryAndPayment() {
+  scrollToTop()
+  
   return (
     <main className={styles["main"]}>
       <div className={styles["main__head"]}></div>

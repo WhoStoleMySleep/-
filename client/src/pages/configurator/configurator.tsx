@@ -1,7 +1,9 @@
 import CreateCake from '../../components/CreateCake/CreateCake';
 import styles from './configurator.module.scss';
+import scrollToTop from '../../utils/scrollToTop';
 
 function Configurator() {
+  scrollToTop()
   return (
     <main className={styles["main"]}>
       <span className={styles["main__head"]}></span>
