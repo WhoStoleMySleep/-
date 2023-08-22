@@ -87,3 +87,21 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .main {
+    &__title {
+      font-size: 38px;
+    }
+
+    &__about-title {
+      font-size: 30px;
+    }
+
+    &__about-main-description,
+    &__about-description {
+      font-size: 16px;
+      font-weight: 300;
+    }
+  }
+}

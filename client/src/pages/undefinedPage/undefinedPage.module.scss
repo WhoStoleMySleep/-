@@ -7,6 +7,8 @@
     height: 420px;
     background-image: url('../../assets/image/undefined-page.webp');
     background-position: 50% 0;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
     margin-top: -15px;
     margin-bottom: 50px;
   }
@@ -15,6 +17,7 @@
     font-size: 50px;
     max-width: 650px;
     margin: 0 auto 40px auto;
+    padding: 0 15px;
   }
 
   &__additional {
@@ -27,5 +30,26 @@
     font-size: 26px;
     line-height: 1.45;
     font-weight: 300;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    &__head {
+      height: 200px;
+    }
+    
+    &__title {
+      font-size: 30px;
+    }
+
+    &__additional {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    &__link {
+      font-size: 20px;
+    }
   }
 }

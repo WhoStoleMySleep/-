@@ -40,6 +40,14 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .send-contact {
+    &__title {
+      font-size: 30px;
+    }
+  }
+}
+
 @media screen and (max-width: 639px) {
   .send-contact {
     &__input-container {

@@ -7,6 +7,8 @@ import { useState } from 'react';
 import { cardData } from './catalogData';
 
 function Catalog() {
+  const windowWidth = document.documentElement.clientWidth
+  const fontSize = windowWidth > 768 ? '42px' : '30px'
   const [isOpen, setIstOpen] = useState({
     image: '',
     title: '',
@@ -103,7 +105,7 @@ function Catalog() {
             </article>
             <Cakes titles={{
               title: 'Категории тортов',
-              titleStyles: {fontSize: '42px', width: '100%', margin: '98px 0 53px 0', lineHeight: "1.35", padding: "0"}
+              titleStyles: {fontSize: fontSize, width: '100%', margin: '98px 0 53px 0', lineHeight: "1.35", padding: "0"}
             }} />
             <article className={styles["main__about"]}>
               <span className={styles["main__about-wrapper"]}>

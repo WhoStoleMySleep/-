@@ -1,12 +1,12 @@
 .create-cake {
-  padding: 238px 0 0 0;
+  padding: 100px 0 0 0;
   
   &__head {
     display: block;
-    max-width: 560px;
+    max-width: 610px;
     margin: 0 auto;
     text-align: center;
-    padding-top: 60px;
+    padding: 60px 0 0 0;
   }
   
   &__title {
@@ -14,6 +14,7 @@
     font-weight: 600;
     margin-bottom: 40px;
     line-height: 1.23;
+    padding: 0 25px;
   }
 
   &__description {
@@ -21,6 +22,7 @@
     line-height: 36px;
     margin-bottom: 121px;
     font-weight: 300;
+    padding: 0 25px;
   }
   
   &__cards {
@@ -43,5 +45,17 @@
     margin: 0 auto 90px auto;
     padding-left: 60px;
     padding-right: 60px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .create-cake {
+    &__title {
+      font-size: 30px;
+    }
+
+    &__description {
+      font-size: 18px;
+    }
   }
 }

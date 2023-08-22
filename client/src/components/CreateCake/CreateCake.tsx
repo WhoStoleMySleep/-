@@ -6,9 +6,11 @@ import { cardData } from './CreateCakeData';
 function CreateCake({createCakeData}: {createCakeData: {
   title: string,
   description: string,
+  onClickData?: any,
+  onClickLink?: any,
   style?: {body?: any, title?: any, description?: any, head?: any} 
 }}) {
-  const {title, description, style} = createCakeData
+  const {title, description, onClickData, onClickLink, style} = createCakeData
   
   return (
     <article className={styles["create-cake"]} style={style?.body}>
@@ -27,7 +29,7 @@ function CreateCake({createCakeData}: {createCakeData: {
           </li> 
         ))}
       </ul>
-      <Link to={'/configurator'} className={styles["create-cake__link"]}>Создать авторский торт</Link>
+      <Link to={'/configurator'} className={styles["create-cake__link"]} onClick={onClickLink && onClickData ? (e) => onClickLink(e, ...onClickData) : () => ''}>Создать авторский торт</Link>
     </article>
   )
 }

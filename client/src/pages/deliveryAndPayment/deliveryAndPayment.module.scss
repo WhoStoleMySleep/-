@@ -91,3 +91,25 @@
     font-weight: 300;
   }
 }
+
+@media screen and (max-width: 1180px) {
+  .main {
+    &__column {
+      max-width: 550px;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    &__title {
+      font-size: 38px;
+    }
+
+    &__text,
+    &__timeline-element p {
+      font-size: 18px;
+    }
+  }
+}

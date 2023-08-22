@@ -10,3 +10,12 @@
     margin: 6px 0;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .cake {
+    &__description {
+      font-size: 16px;
+      text-align: center;
+    }
+  }
+}

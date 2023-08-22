@@ -45,6 +45,14 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .footer {
+    &__wrapper {
+      padding-top: 0;
+    }
+  }
+}
+
 @media screen and (max-width: 675px) {
   .footer {
     &__wrapper {
