@@ -43,11 +43,9 @@
     }
   }
 
-  details {
-    summary {
-      position: absolute;
-      display: none;
-    }
+  &__burger {
+    position: absolute;
+    display: none;
   }
 }
 
@@ -55,23 +53,21 @@
   .header {
     $this: &;
     
-    details {
-      summary {
-        width: 32px;
-        height: 32px;
-        font-size: 32px;
-        display: block;
-        right: 22px;
-        top: calc(50% - 16px);
-        line-height: 32px;
-      }
+    &__burger {
+      width: 32px;
+      height: 32px;
+      font-size: 32px;
+      display: block;
+      right: 22px;
+      top: calc(50% - 16px);
+      line-height: 32px;
     }
 
     &__link-list {
       flex-direction: column;
     }
 
-    details[open] {
+    &__bar[data-open=true] {
       #{$this}__link-list {
         width: 100vw;
         height: 100vh;
