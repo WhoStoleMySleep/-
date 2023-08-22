@@ -1,3 +1,11 @@
-# https://www.robotstxt.org/robotstxt.html
+Sitemap: https://tortuli.vercel.app/sitemap
 User-agent: *
-Disallow:
+Allow: https://tortuli.vercel.app
+Allow: https://tortuli.vercel.app/catalog
+Allow: https://tortuli.vercel.app/configurator
+Allow: https://tortuli.vercel.app/about-confectionery
+Allow: https://tortuli.vercel.app/delivery-and-payment
+Allow: https://tortuli.vercel.app/contacts
+Allow: https://tortuli.vercel.app/sitemap
+Allow: https://tortuli.vercel.app/privacy-policy
+Disallow: https://tortuli.vercel.app/*
