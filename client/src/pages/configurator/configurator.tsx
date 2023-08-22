@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import ConfiguratorMenu from '../../components/ConfiguratorMenu/ConfiguratorMenu';
 import CreateCake from '../../components/CreateCake/CreateCake';
 import styles from './configurator.module.scss';
@@ -7,6 +8,12 @@ function Configurator() {
   const [open, setOpen] = useState(false);
 
   scrollToTop()
+
+  const handleOpen = (e: any, setOpen: any) => {
+    e.preventDefault()
+    setOpen((item: boolean) => !item);
+  }
+  
   return (
     <main className={styles["main"]}>
       <span className={styles["main__head"]}></span>
@@ -19,6 +26,8 @@ function Configurator() {
       <CreateCake createCakeData={{
         title: 'Создайте торт своей мечты.',
         description: 'У нас можно заказать авторский торт со своим дизайном и любой начинкой',
+        onClickData: [setOpen],
+        onClickLink: handleOpen,
         style: { 
           body: {
             padding: '0'
