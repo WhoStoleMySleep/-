@@ -7,6 +7,7 @@
   z-index: 100000;
   opacity: 0.6;
   animation: fadeInUp 0.15s ease-in-out forwards;
+  padding: 0 25px 25px 25px;
 
   * {
     font-family: 'FuturaPT',Arial,sans-serif;
@@ -34,8 +35,9 @@
   }
 
   &__image {
-    width: 560px;
-    height: 420px;
+    max-width: 560px;
+    width: 100%;
+    height: fit-content;
   }
 
   &__title {
@@ -112,5 +114,13 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .product {
+    &__wrapper {
+      flex-wrap: wrap;
+    }
   }
 }
