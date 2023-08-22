@@ -1,11 +1,3 @@
 Sitemap: https://tortuli.vercel.app/sitemap
 User-agent: *
-Allow: /
-Allow: /catalog
-Allow: /configurator
-Allow: /about-confectionery
-Allow: /delivery-and-payment
-Allow: /contacts
-Allow: /sitemap
-Allow: /privacy-policy
-Disallow: /*
+Disallow:
