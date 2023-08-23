@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from './ConfiguratorMenu.module.scss';
 import { Link } from 'react-router-dom';
+import scrollingBan from '../../utils/scrollingBan';
 
 function ConfiguratorMenu({configuratorMenuData}: {configuratorMenuData: {setOpen: any}}) {
   const [step, setStep] = useState(1)
@@ -9,10 +10,7 @@ function ConfiguratorMenu({configuratorMenuData}: {configuratorMenuData: {setOpe
     configuratorMenuData.setOpen(false)
     setStep(1)
 
-    if (document.querySelector('html')) {
-      const html = document.querySelector('html') as HTMLHtmlElement
-      html.style.overflow = 'visible'
-    }
+    scrollingBan(false)
   }
   
   const nextStep = () => {
@@ -23,10 +21,7 @@ function ConfiguratorMenu({configuratorMenuData}: {configuratorMenuData: {setOpe
     setStep((item) => item > 1 ? item - 1 : item)
   }
 
-  if (document.querySelector('html')) {
-    const html = document.querySelector('html') as HTMLHtmlElement
-    html.style.overflow = 'hidden'
-  }
+  scrollingBan(true)
   
   return (
     <article className={styles["configurator-menu"]}>

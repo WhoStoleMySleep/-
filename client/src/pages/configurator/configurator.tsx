@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ConfiguratorMenu from '../../components/ConfiguratorMenu/ConfiguratorMenu';
 import CreateCake from '../../components/CreateCake/CreateCake';
 import styles from './configurator.module.scss';
@@ -7,7 +7,9 @@ import scrollToTop from '../../utils/scrollToTop';
 function Configurator() {
   const [open, setOpen] = useState(false);
 
-  scrollToTop()
+  useEffect(() => {
+    scrollToTop()
+  }, [])
 
   const handleOpen = (e: any, setOpen: any) => {
     e.preventDefault()
