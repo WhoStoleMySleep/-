@@ -18,6 +18,7 @@ import SiteMap from './pages/siteMap/siteMap';
 import { ApolloProvider } from '@apollo/client';
 import client from './apollo/client';
 import Admin from './pages/admin/admin';
+import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 
