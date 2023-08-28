@@ -1,0 +1,48 @@
+.main {
+  min-height: 100vh;
+  background-color: #ffe600;
+  padding: 25px;
+  
+  &__title {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  &__select-category {
+    max-width: 900px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  &__select-button {
+    font-size: 24px;
+    margin-bottom: 40px;
+    background-color: #ffe600;
+  }
+
+  &__article {
+    padding: 25px;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #fff;
+    max-height: 100vh;
+    height: 100vh;
+  }
+
+  &__list-element {
+    border-top: 1px solid #666666;
+    padding: 20px 0;
+    display: flex;
+
+    &:last-child {
+      border-bottom: 1px solid #666666;
+    }
+  }
+
+  &__list-element-id,
+  &__list-element-number {
+    font-size: 16px;
+  }
+}
