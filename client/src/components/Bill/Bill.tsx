@@ -5,15 +5,19 @@ import TimelineCheckbox from '../TimelineRadio/TimelineRadio';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { SAVE_OUR_CAKES } from '../../GraphQl.queries';
+import { useDispatch, useSelector } from 'react-redux';
+import selectedCakes from '../../redux/reducers/selectors/selectedCakes';
+import { setSelectedCakes } from '../../redux/reducers/selectedCakes';
 
 function Bill({billData}: {billData: any, setOnOpen: Dispatch<SetStateAction<boolean>>}) {
   const [saveOurCakes] = useMutation(SAVE_OUR_CAKES)
+  const dataCakes = useSelector(selectedCakes)
+  const dispatch = useDispatch()
   const [data, setData] = useState({
     cakes: [
-      ['10188', '1'],
-      ['10221', '1']
+      dataCakes.map((item: any) => [item.id, '1']),
     ],
-    price: '1',
+    price: dataCakes.map((item: any) => item.amount).reduce((prevItem: any, currentItem: any) => `${+prevItem + +currentItem}`, 0),
     name: '',
     email: '',
     number: '',
@@ -26,10 +30,6 @@ function Bill({billData}: {billData: any, setOnOpen: Dispatch<SetStateAction<boo
     interval: 'С 9:00 до 12:00',
     paymentMethod: 'Наличными при получении',
   })
-
-  useEffect(() => {
-    console.log(data);
-  }, [data])
 
   type BillInputData = {
     cakes: any
@@ -71,6 +71,10 @@ function Bill({billData}: {billData: any, setOnOpen: Dispatch<SetStateAction<boo
       }})
     }
   }
+
+  function removeElementCake(id: string) {
+    dispatch(setSelectedCakes(dataCakes.filter((item: any) => item.id !== id)))
+  }
   
   return (
     <article className={styles["bill"]}>
@@ -79,45 +83,29 @@ function Bill({billData}: {billData: any, setOnOpen: Dispatch<SetStateAction<boo
           Ваш заказ:
         </h2>
         <ul className={styles["bill__product-list"]}>
-          <li className={styles["bill__product-item"]}>
-            <img src={'https://static.tildacdn.com/stor3335-6137-4666-a162-366536643865/89095657.jpg'} alt="" className={styles["bill__product-item-image"]} />
-            <Link to="/" className={styles["bill__product-title"]}>
-              Чиз-кейк "Нью-Йорк" с апельсином <br />
-              <p className={styles["bill__product-article"]}>10188</p>
-            </Link>
-            <div className={styles["bill__product-item-calc"]}>
-              <button className={styles["bill__product-calc-minus"]}>-</button>
-              <p className={styles["bill__product-calc-input"]}>1</p>
-              <button className={styles["bill__product-calc-plus"]}>+</button>
-            </div>
-            <p className={styles["bill__product-price"]}>1 200 ₽</p>
-            <button className={styles["bill__product-remove"]}>
-              <p className={styles["bill__product-remove-text"]}>
-                +
-              </p>
-            </button>
-          </li>
-          <li className={styles["bill__product-item"]}>
-            <img src={'https://static.tildacdn.com/stor3434-3632-4537-b937-623139393034/49901221.jpg'} alt="" className={styles["bill__product-item-image"]} />
-            <Link to="/" className={styles["bill__product-title"]}>
-              Карамельный <br />
-              <p className={styles["bill__product-article"]}>10221</p>
-            </Link>
-            <div className={styles["bill__product-item-calc"]}>
-              <button className={styles["bill__product-calc-minus"]}>-</button>
-              <p className={styles["bill__product-calc-input"]}>1</p>
-              <button className={styles["bill__product-calc-plus"]}>+</button>
-            </div>
-            <p className={styles["bill__product-price"]}>1 100 ₽</p>
-            <button className={styles["bill__product-remove"]}>
-              <p className={styles["bill__product-remove-text"]}>
-                +
-              </p>
-            </button>
-          </li>
+          {dataCakes[0] && dataCakes.map((item: any, index) => (
+            <li className={styles["bill__product-item"]} key={item.id}>
+              <img src={item.image} alt="" className={styles["bill__product-item-image"]} />
+              <Link to="/" className={styles["bill__product-title"]}>
+                {item.title} <br />
+                <p className={styles["bill__product-article"]}>{item.id}</p>
+              </Link>
+              <div className={styles["bill__product-item-calc"]}>
+                <button className={styles["bill__product-calc-minus"]}>-</button>
+                <p className={styles["bill__product-calc-input"]}>1</p>
+                <button className={styles["bill__product-calc-plus"]}>+</button>
+              </div>
+              <p className={styles["bill__product-price"]}>{item.amount} ₽</p>
+              <button className={styles["bill__product-remove"]} onClick={() => removeElementCake(item.id)}>
+                <p className={styles["bill__product-remove-text"]}>
+                  +
+                </p>
+              </button>
+            </li>
+          ))}
         </ul>
         <p className={styles["bill__amount"]}>
-          Сумма: 2 300 ₽
+          Сумма: {data.price} ₽
         </p>
         <div className={styles["bill__first-input-list"]}>
           <BillInput billInputData={{title: 'Фамилия Имя Отчество', placeholder: 'Иван Иванов Иванович'}} onChange={(event) => editData('name', event.target.value)} />
@@ -152,10 +140,9 @@ function Bill({billData}: {billData: any, setOnOpen: Dispatch<SetStateAction<boo
             <TimelineCheckbox radioData={{ name: 'payment-method', text: 'Кредитной картой, ЮMoney, Google Pay или Apple Pay' }} onChange={() => editData('paymentMethod', 'Кредитной картой, ЮMoney, Google Pay или Apple Pay')} />
           </div>
           <div className={styles["bill__text-list"]}>
-            <p className={styles["bill__text-amount"]}>Сумма: 2 300 ₽</p>
+            <p className={styles["bill__text-amount"]}>Сумма: {data.price} ₽</p>
             <p className={styles["bill__text-delivery"]}>Доставка: 1 500 ₽</p>
-            <p className={styles["bill__text-address"]}>Россия, Алтайский край, г Барнаул, ул 1 Мая</p>
-            <p className={styles["bill__text-total"]}>Итоговая сумма: 3 800 ₽</p>
+            <p className={styles["bill__text-total"]}>Итоговая сумма: {+data.price < 3000 ? +data.price + 1500 : data.price} ₽</p>
           </div>
           <button className={styles["bill__submit-button"]} onClick={submitOrder}>Оформить заказ</button>
         </div>

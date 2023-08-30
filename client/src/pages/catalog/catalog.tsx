@@ -29,9 +29,16 @@ function Catalog() {
     additionally: '',
   })
 
+  const [cakesArray, setCakesArray] = useState([])
+  const [countCakes, setCountCakes] = useState(10)
+
   useEffect(() => {
     scrollToTop()
   }, [])
+
+  useEffect(() => {
+    setCakesArray(data && data.cakes && data.cakes.cakes ? data.cakes.cakes.slice(0, countCakes) : [])
+  }, [data])
 
   const handleOpen = (item: any) => {
     setIstOpen(item)
@@ -41,6 +48,11 @@ function Catalog() {
     } else {
       scrollingBan(false)
     }
+  }
+
+  const moreCakesList = () => {
+    setCountCakes((item: number) => item + 10)
+    setCakesArray(data && data.cakes && data.cakes.cakes ? data.cakes.cakes.slice(0, countCakes) : [])
   }
 
   const notNull = isOpen &&
@@ -91,7 +103,7 @@ function Catalog() {
                 <p className={styles["main__sections-head"]}>Раздел</p>
               </aside>
               <ul className={styles["main__catalog-list"]}>
-                {data && data.cakes && data.cakes.cakes && data.cakes.cakes.map((item: any, index: number) => {
+                {cakesArray.map((item: any, index: number) => {
                   return (
                     <li className={styles["main__catalog-list-element"]} key={index} onClick={() => handleOpen(item)}>
                       <Card cardData={item} />
@@ -100,9 +112,11 @@ function Catalog() {
                 })}
               </ul>
             </div>
-            <button className={styles["main__load-more"]}>
-              Загрузить еще
-            </button>
+            {data && data.cakes && data.cakes.cakes && data.cakes.cakes.length > countCakes &&
+              <button className={styles["main__load-more"]} onClick={moreCakesList}>
+                Загрузить еще
+              </button>
+            }
           </div>
         </article>
         <Cakes titles={{
