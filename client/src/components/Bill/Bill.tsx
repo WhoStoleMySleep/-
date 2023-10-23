@@ -74,6 +74,7 @@ function Bill({billData}: {billData: any, setOnOpen: Dispatch<SetStateAction<boo
 
   function removeElementCake(id: string) {
     dispatch(setSelectedCakes(dataCakes.filter((item: any) => item.id !== id)))
+    data.price = dataCakes.filter((item: any) => item.id !== id).map((item: any) => item.amount).reduce((prevItem: any, currentItem: any) => `${+prevItem + +currentItem}`, 0)
   }
   
   return (
@@ -86,16 +87,16 @@ function Bill({billData}: {billData: any, setOnOpen: Dispatch<SetStateAction<boo
           {dataCakes[0] && dataCakes.map((item: any, index) => (
             <li className={styles["bill__product-item"]} key={item.id}>
               <img src={item.image} alt="" className={styles["bill__product-item-image"]} />
-              <Link to="/" className={styles["bill__product-title"]}>
+              <div className={styles["bill__product-title"]}>
                 {item.title} <br />
                 <p className={styles["bill__product-article"]}>{item.id}</p>
-              </Link>
+              </div>
               <div className={styles["bill__product-item-calc"]}>
                 <button className={styles["bill__product-calc-minus"]}>-</button>
                 <p className={styles["bill__product-calc-input"]}>1</p>
                 <button className={styles["bill__product-calc-plus"]}>+</button>
               </div>
-              <p className={styles["bill__product-price"]}>{item.amount} ₽</p>
+              <p className={styles["bill__product-price"]}>{(+item.amount).toLocaleString()} ₽</p>
               <button className={styles["bill__product-remove"]} onClick={() => removeElementCake(item.id)}>
                 <p className={styles["bill__product-remove-text"]}>
                   +
@@ -105,7 +106,7 @@ function Bill({billData}: {billData: any, setOnOpen: Dispatch<SetStateAction<boo
           ))}
         </ul>
         <p className={styles["bill__amount"]}>
-          Сумма: {data.price} ₽
+          Сумма: {(+data.price).toLocaleString()} ₽
         </p>
         <div className={styles["bill__first-input-list"]}>
           <BillInput billInputData={{title: 'Фамилия Имя Отчество', placeholder: 'Иван Иванов Иванович'}} onChange={(event) => editData('name', event.target.value)} />
@@ -139,13 +140,13 @@ function Bill({billData}: {billData: any, setOnOpen: Dispatch<SetStateAction<boo
             <TimelineCheckbox radioData={{ name: 'payment-method', text: 'Наличными при получении' }} onChange={() => editData('paymentMethod', 'Наличными при получении')} checked={data.paymentMethod === '' ||  data.paymentMethod === 'Наличными при получении'} />
             <TimelineCheckbox radioData={{ name: 'payment-method', text: 'Кредитной картой, ЮMoney, Google Pay или Apple Pay' }} onChange={() => editData('paymentMethod', 'Кредитной картой, ЮMoney, Google Pay или Apple Pay')} />
           </div>
-          <div className={styles["bill__text-list"]}>
-            <p className={styles["bill__text-amount"]}>Сумма: {data.price} ₽</p>
-            <p className={styles["bill__text-delivery"]}>Доставка: 1 500 ₽</p>
-            <p className={styles["bill__text-total"]}>Итоговая сумма: {+data.price < 3000 ? +data.price + 1500 : data.price} ₽</p>
-          </div>
-          <button className={styles["bill__submit-button"]} onClick={submitOrder}>Оформить заказ</button>
         </div>
+        <div className={styles["bill__text-list"]}>
+          <p className={styles["bill__text-amount"]}>Сумма: {(+data.price).toLocaleString()} ₽</p>
+          <p className={styles["bill__text-delivery"]}>Доставка: {+data.price < 3000 ? '1 500' : '0'} ₽</p>
+          <p className={styles["bill__text-total"]}>Итоговая сумма: {(+data.price < 3000 ? +data.price + 1500 : data.price).toLocaleString()} ₽</p>
+        </div>
+        <button className={styles["bill__submit-button"]} onClick={submitOrder}>Оформить заказ</button>
       </div>
     </article>
   )

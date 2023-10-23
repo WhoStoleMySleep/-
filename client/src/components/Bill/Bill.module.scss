@@ -152,8 +152,33 @@
     flex-direction: column;
   }
 
+  &__delivery-interval {
+    margin-bottom: 55px;
+  }
+
+  &__text {
+    font-size: 16px;
+    margin-bottom: 5px;
+    line-height: 1.55;
+    font-weight: 300;
+  }
+
+  &__radio-list {
+    margin-bottom: 20px;
+  }
+
   &__text-list {
     text-align: right;
+    margin-bottom: 30px;
+  }
+
+  &__text-delivery {
+    margin-bottom: 10px;
+  }
+
+  &__text-total {
+    font-weight: 600;
+    font-size: 16px;
   }
 
   &__submit-button {
@@ -166,5 +191,26 @@
     white-space: nowrap;
     padding: 0 60px;
     border-radius: 50px;
+  }
+}
+
+@media screen and (max-width: 544px) {
+  .bill {
+    &__first-input-row {
+      display: flex;
+      flex-direction: column;
+
+      input {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 448px) {
+  .bill {
+    &__product-title {
+      display: none;
+    }
   }
 }
