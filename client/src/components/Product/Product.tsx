@@ -32,7 +32,7 @@ function Product({productData, handleOpen}: {productData: {id: string, image: st
         <div className={styles["product__column"]}>
           <h2 className={styles["product__title"]}>{title}</h2>
           <p className={styles["product__article"]}>Артикул: {id}</p>
-          <p className={styles["product__amount"]}>{amount}</p>
+          <p className={styles["product__amount"]}>{(+amount).toLocaleString()} ₽</p>
           <button className={styles["product__buy"]} onClick={() => {handleOpen(cleared); onSelectCakes()}}>Заказать</button>
           <p className={styles["product__description"]}>{description}</p>
           <p className={styles["product__mass"]}>Вес: {mass}</p>

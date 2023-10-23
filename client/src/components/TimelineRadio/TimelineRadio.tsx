@@ -6,7 +6,7 @@ function TimelineRadio({radioData, onChange, checked}: {radioData: {name: string
   return (
     <label className={styles["timeline-checkbox"]}>
       <input type="radio" checked={checked} name={name} id="" onChange={() => onChange()} className="timeline-checkbox__deluvery-checkbox" />
-      {text}
+      <span>{text}</span>
     </label>
   )
 }

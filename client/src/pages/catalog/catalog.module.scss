@@ -96,6 +96,50 @@
     margin-bottom: 10px;
   }
 
+  &__section-label {
+    align-items: center;
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    position: relative;
+
+    &:has(input:checked) {
+      &::before {
+        opacity: 1;
+      }
+      
+      &::after {
+        content: '';
+        position: absolute;
+        left: 8px;
+        top: 4px;
+        width: 3px;
+        height: 8px;
+        border: solid #000;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+        z-index: 100;
+      }
+    }
+
+    &::before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      display: block;
+      border: 2px solid #000;
+      opacity: 0.6;
+      box-sizing: border-box;
+      margin-right: 10px;
+    }
+  }
+
+  &__section {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
   &__catalog-list {
     display: flex;
     flex-wrap: wrap;

@@ -31,7 +31,11 @@ function Catalog() {
 
   const [cakesArray, setCakesArray] = useState([])
   const [countCakes, setCountCakes] = useState(10)
-
+  const categories = cakesArray.map((item: any) => item.category)
+  const sections = categories.filter((item, index) => categories.indexOf(item) === index);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedSection, setSelectedSection] = useState([''])
+  
   useEffect(() => {
     scrollToTop()
   }, [])
@@ -69,6 +73,25 @@ function Catalog() {
     'composition',
     'additionally'
   ].every(prop => isOpen[prop as keyof typeof isOpen] !== '')
+
+  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
+  }
+
+  let filteredCakes = cakesArray.filter((cake:any) => {
+    return (
+      cake.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
+      selectedSection.some((section: string) => cake.category.includes(section))
+    );
+  });
+  
+  const handleSectionClick = (item: string) => {
+    if (selectedSection.includes(item as never)) {
+      setSelectedSection((elem) => elem.length === 1 ? [''] : elem.filter((section: string) => section !== item));
+    } else {
+      setSelectedSection(selectedSection[0] === '' ? [item as never] : [...selectedSection, item as never]);
+    }
+  };
   
   return (
     <main className={styles["main"]}>
@@ -86,7 +109,7 @@ function Catalog() {
           <div className={styles["main__catalog-container"]}>
             <div className={styles["main__catalog-find"]}>
               <div className={styles["main__catalog-input-container"]}>
-                <input type="text" className={styles["main__catalog-input"]} placeholder='Поиск' />
+                <input type="text" className={styles["main__catalog-input"]} placeholder='Поиск' value={searchTerm} onChange={handleSearch}  />
               </div>
               <select name="sort" id="" className={styles["main__catalog-sort"]}>
                 <option value="">Порядок: по умолчанию</option>
@@ -101,9 +124,17 @@ function Catalog() {
             <div className={styles["main__catalog-products"]}>
               <aside className={styles["main__catalog-sections"]}>
                 <p className={styles["main__sections-head"]}>Раздел</p>
+                <ul className='main__section-list'>
+                  {sections.map((item: any, index: number) => (
+                    <label key={index} className={styles["main__section-label"]} onChange={() => handleSectionClick(item)}>
+                      <input type='checkbox' className={styles["main__section"]}/>
+                      {item}
+                    </label>
+                  ))}
+                </ul>
               </aside>
               <ul className={styles["main__catalog-list"]}>
-                {cakesArray.map((item: any, index: number) => {
+                {filteredCakes.map((item: any, index: number) => {
                   return (
                     <li className={styles["main__catalog-list-element"]} key={index} onClick={() => handleOpen(item)}>
                       <Card cardData={item} />
