@@ -15,7 +15,7 @@ function Bill({billData}: {billData: any, setOnOpen: Dispatch<SetStateAction<boo
   const dispatch = useDispatch()
   const [data, setData] = useState({
     cakes: [
-      dataCakes.map((item: any) => [item.id, '1']),
+      dataCakes.map((item: any) => [item.id, 1]),
     ],
     price: dataCakes.map((item: any) => item.amount).reduce((prevItem: any, currentItem: any) => `${+prevItem + +currentItem}`, 0),
     name: '',
@@ -76,6 +76,18 @@ function Bill({billData}: {billData: any, setOnOpen: Dispatch<SetStateAction<boo
     dispatch(setSelectedCakes(dataCakes.filter((item: any) => item.id !== id)))
     data.price = dataCakes.filter((item: any) => item.id !== id).map((item: any) => item.amount).reduce((prevItem: any, currentItem: any) => `${+prevItem + +currentItem}`, 0)
   }
+
+  function incrementElementCake(id: number) {
+    setData({...data, cakes: [data.cakes[0].map((item: any) => item[0] == id + 1 ? [item[0], item[1] + 1] : item)]})
+  }
+
+  function decrementElementCake(id: number) {
+    setData({...data, cakes: [data.cakes[0].map((item: any) => item[0] == id + 1 ? [item[0], item[1] - 1] : item)]})
+
+    if (data.cakes[0][id][1] == 1) {
+      removeElementCake(data.cakes[0][id][0])
+    }
+  }
   
   return (
     <article className={styles["bill"]}>
@@ -92,9 +104,9 @@ function Bill({billData}: {billData: any, setOnOpen: Dispatch<SetStateAction<boo
                 <p className={styles["bill__product-article"]}>{item.id}</p>
               </div>
               <div className={styles["bill__product-item-calc"]}>
-                <button className={styles["bill__product-calc-minus"]}>-</button>
-                <p className={styles["bill__product-calc-input"]}>1</p>
-                <button className={styles["bill__product-calc-plus"]}>+</button>
+                <button className={styles["bill__product-calc-minus"]} onClick={() => decrementElementCake(index)}>-</button>
+                <p className={styles["bill__product-calc-input"]}>{data.cakes[0][index][1]}</p>
+                <button className={styles["bill__product-calc-plus"]} onClick={() => incrementElementCake(index)}>+</button>
               </div>
               <p className={styles["bill__product-price"]}>{(+item.amount).toLocaleString()} ₽</p>
               <button className={styles["bill__product-remove"]} onClick={() => removeElementCake(item.id)}>
